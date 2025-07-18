@@ -4,9 +4,8 @@ baseurl: "" # subruta, dejar vacío si se despliega en la raíz
 url: "https://gueco99.github.io"
 repository: gueco99/gueco99.github.io
 
+# ✅ IMPORTANTE: Tema correcto para GitHub Pages
 remote_theme: just-the-docs/just-the-docs
-
-
 
 permalink: pretty
 
@@ -105,6 +104,7 @@ callouts:
     title: Warning
     color: red
 
+# ✅ Estos plugins son válidos en GitHub Pages
 plugins:
   - jekyll-seo-tag
   - jekyll-github-metadata
