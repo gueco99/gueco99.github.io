@@ -666,9 +666,9 @@ We're so excited to release Just the Docs `v0.4.0`. This release has been almost
 `v0.4.0` contains many new features and bugfixes. We enumerate all of them in further sections in this changelog; however, we'd like to call out some of the most-requested changes:
 
 - better support for dark theme: dark highlighting, search input color
-- [callouts](https://just-the-docs.com/docs/ui-components/callouts/), a new design component to highlight content
-- [configuring mermaid.js](https://just-the-docs.com/docs/ui-components/code/#mermaid-diagram-code-blocks), a markdown-native diagram visualization library
-- [copy code button](https://just-the-docs.com/docs/ui-components/code/#copy-button) for code snippets
+- [callouts](https://just-the-docs.com/docs/htb_walkthroughs/callouts/), a new design component to highlight content
+- [configuring mermaid.js](https://just-the-docs.com/docs/htb_walkthroughs/code/#mermaid-diagram-code-blocks), a markdown-native diagram visualization library
+- [copy code button](https://just-the-docs.com/docs/htb_walkthroughs/code/#copy-button) for code snippets
 - external navigation links
 - major improvements to nav generation efficiency and robustness
 - minor improvements to built-in accessibility (SVG icons, nav titles, skip to main content)
