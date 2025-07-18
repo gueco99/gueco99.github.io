@@ -1,6 +1,6 @@
 ---
 title: Code
-parent: UI Components
+parent: Hack The Box - Walkthroughs
 nav_order: 6
 ---
 
