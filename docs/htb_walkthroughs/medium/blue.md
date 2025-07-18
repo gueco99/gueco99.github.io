@@ -7,7 +7,7 @@ nav_order: 1
 # Walkthrough — Blue (Hack The Box)
 {: .fs-9 }
 
-Máquina de nivel **Medium** basada en Windows, conocida por su vulnerabilidad al exploit **EternalBlue** (MS17-010), una de las más famosas de los últimos años.
+Máquina de nivel **Medium** basada en Windows, conocida por su vulnerabilidad al exploit **EternalBlue** (MS17-010), una de las más famosas de los últimos años. hola
 {: .fs-6 .fw-300 }
 
 ---
