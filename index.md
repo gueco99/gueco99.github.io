@@ -1,17 +1,9 @@
 ---
-layout: home
+layout: default
 title: Inicio
+nav_order: 1
 ---
 
-# Walkthroughs HTB - gueco99
+# HTB Walkthroughs - gueco99
 
-¡Hola! Soy Diego Pacheco (gueco99) y aquí publico mis walkthroughs de Hack The Box.
-
-### Máquinas Easy
-
-- [Nibbles](nibbles.md)
-- [Lame](lame.md)
-
-## Máquinas Medium
-
-- [Forest](forest.md)
+¡Bienvenido! Aquí encontrarás mis walkthroughs de Hack The Box organizados por dificultad.
