@@ -20,22 +20,22 @@ nav_order: 2
 ### Links that look like buttons
 
 <div class="code-example" markdown="1">
-[Link button](https://just-the-docs.com){: .btn }
+[Link button](https://github.com/gueco99){: .btn }
 
-[Link button](https://just-the-docs.com){: .btn .btn-purple }
-[Link button](https://just-the-docs.com){: .btn .btn-blue }
-[Link button](https://just-the-docs.com){: .btn .btn-green }
+[Link button](https://github.com/gueco99){: .btn .btn-purple }
+[Link button](https://github.com/gueco99){: .btn .btn-blue }
+[Link button](https://github.com/gueco99){: .btn .btn-green }
 
-[Link button](https://just-the-docs.com){: .btn .btn-outline }
+[Link button](https://github.com/gueco99){: .btn .btn-outline }
 </div>
 ```markdown
-[Link button](https://just-the-docs.com){: .btn }
+[Link button](https://github.com/gueco99){: .btn }
 
-[Link button](https://just-the-docs.com){: .btn .btn-purple }
-[Link button](https://just-the-docs.com){: .btn .btn-blue }
-[Link button](https://just-the-docs.com){: .btn .btn-green }
+[Link button](https://github.com/gueco99){: .btn .btn-purple }
+[Link button](https://github.com/gueco99){: .btn .btn-blue }
+[Link button](https://github.com/gueco99){: .btn .btn-green }
 
-[Link button](https://just-the-docs.com){: .btn .btn-outline }
+[Link button](https://github.com/gueco99){: .btn .btn-outline }
 ```
 
 ### Button element
@@ -59,20 +59,20 @@ Wrap the button in a container that uses the theme's font-size utility classes t
 
 <div class="code-example" markdown="1">
 <span class="fs-6">
-[Big ass button](https://just-the-docs.com){: .btn }
+[Big ass button](https://github.com/gueco99){: .btn }
 </span>
 
 <span class="fs-3">
-[Tiny ass button](https://just-the-docs.com){: .btn }
+[Tiny ass button](https://github.com/gueco99){: .btn }
 </span>
 </div>
 ```markdown
 <span class="fs-8">
-[Link button](https://just-the-docs.com){: .btn }
+[Link button](https://github.com/gueco99){: .btn }
 </span>
 
 <span class="fs-3">
-[Tiny ass button](https://just-the-docs.com){: .btn }
+[Tiny ass button](https://github.com/gueco99){: .btn }
 </span>
 ```
 
@@ -81,16 +81,16 @@ Wrap the button in a container that uses the theme's font-size utility classes t
 Use the theme's margin utility classes to add spacing between two buttons in the same block.
 
 <div class="code-example" markdown="1">
-[Button with space](https://just-the-docs.com){: .btn .btn-purple .mr-2 }
-[Button](https://just-the-docs.com){: .btn .btn-blue }
+[Button with space](https://github.com/gueco99){: .btn .btn-purple .mr-2 }
+[Button](https://github.com/gueco99){: .btn .btn-blue }
 
-[Button with more space](https://just-the-docs.com){: .btn .btn-green .mr-4 }
-[Button](https://just-the-docs.com){: .btn .btn-blue }
+[Button with more space](https://github.com/gueco99){: .btn .btn-green .mr-4 }
+[Button](https://github.com/gueco99){: .btn .btn-blue }
 </div>
 ```markdown
-[Button with space](https://just-the-docs.com){: .btn .btn-purple .mr-2 }
-[Button](https://just-the-docs.com){: .btn .btn-blue }
+[Button with space](https://github.com/gueco99){: .btn .btn-purple .mr-2 }
+[Button](https://github.com/gueco99){: .btn .btn-blue }
 
-[Button with more space](https://just-the-docs.com){: .btn .btn-green .mr-4 }
-[Button](https://just-the-docs.com){: .btn .btn-blue }
+[Button with more space](https://github.com/gueco99){: .btn .btn-green .mr-4 }
+[Button](https://github.com/gueco99){: .btn .btn-blue }
 ```

@@ -2,18 +2,18 @@
 title: Inicio
 layout: home
 nav_order: 1
-description: "Portfolio técnico de Diego Pacheco: proyectos y walkthroughs de ciberseguridad."
+description: "Portfolio técnico de gueco99: proyectos y walkthroughs de ciberseguridad."
 permalink: /
 ---
 
-# Diego Pacheco – Portfolio Técnico
+# gueco99 – Portfolio Técnico
 {: .fs-9 }
 
 Bienvenido a mi sitio personal. Aquí comparto mis proyectos y walkthroughs relacionados con la administración de sistemas y la ciberseguridad.
 {: .fs-6 .fw-300 }
 
 [Ver walkthroughs](walkthroughs/easy/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Ver proyectos](proyectos/){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Ver proyectos](gueco_projects/){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
@@ -29,7 +29,7 @@ Apasionado por el aprendizaje constante, el hacking ético y el trabajo técnico
 ### 📂 Proyectos
 
 Desarrollos, scripts, automatizaciones, mini herramientas, prácticas:  
-→ [Ver proyectos](proyectos/)
+→ [Ver proyectos](gueco_projects/)
 
 ### 🧠 Hack The Box
 
@@ -40,9 +40,8 @@ Resolución de máquinas de HTB organizadas por dificultad:
 
 ---
 
-## 💬 Contacto y redes
+## 💬 Contacto
 
-- [LinkedIn](https://www.linkedin.com/in/diego-pacheco-a51070178)
 - [GitHub](https://github.com/gueco99)
 
 ---

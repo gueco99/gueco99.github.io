@@ -18,3 +18,4 @@ Todas están resueltas paso a paso, con comandos, notas y técnicas aplicadas.
 - [Easy](easy/index.md)
 - [Medium](medium/index.md)
 - [Hard](hard/index.md)
+- [Insane](insane/index.md)
