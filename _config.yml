@@ -4,7 +4,8 @@ baseurl: "" # subruta, dejar vacío si se despliega en la raíz
 url: "https://gueco99.github.io"
 repository: gueco99/gueco99.github.io
 
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
+
 
 
 permalink: pretty
