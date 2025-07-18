@@ -9,7 +9,7 @@ nav_order: 1
 
 Aquí encontrarás mis walkthroughs para las máquinas clasificadas como "Easy" en Hack The Box.
 
-Cada entrada incluye el proceso completo de resolución, herramientas utilizadas y comandos ejecutados.
+Cada entrada incluye el proceso completo de resolución, herramientas utilizadas y comandos ejecutados. hola
 
 ---
 
