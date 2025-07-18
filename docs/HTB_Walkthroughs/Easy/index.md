@@ -1,7 +1,7 @@
 ---
 title: Easy
 nav_order: 1
-parent: Hack The Box - Walkthroughs
+parent: HTB - Walkthroughs
 has_children: true
 ---
 
