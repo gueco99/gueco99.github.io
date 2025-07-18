@@ -1,13 +1,13 @@
 title: "HTB Walkthroughs - gueco99"
 description: "Mis walkthroughs de Hack The Box"
-theme: "just-the-docs"
+theme: just-the-docs
 
 # Navegación lateral
 just_the_docs:
   logo: "assets/img/logo.png"
   aux_links:
     "GitHub Repo":
-      - "https://github.com/gueco99/gueco99.github.io"
+      url: "https://github.com/gueco99/gueco99.github.io"
   search_enabled: true
 
 # Rutas del contenido
