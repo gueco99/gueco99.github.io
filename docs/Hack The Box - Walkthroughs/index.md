@@ -1,5 +1,5 @@
 ---
-title: Hack The Box
+title: Hack The Box - Walkthroughs
 nav_order: 2
 has_children: true
 ---
