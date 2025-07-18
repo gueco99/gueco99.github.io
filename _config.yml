@@ -1,0 +1,8 @@
+title: "HTB Walkthroughs - gueco99"
+author: Diego Pacheco
+description: "Mis walkthroughs de Hack The Box"
+theme: minima
+markdown: kramdown
+header_pages:
+  - index.md
+  - about.md
