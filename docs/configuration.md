@@ -86,7 +86,7 @@ mermaid:
 
 Provide a `path` instead of a `version` key to load the mermaid library from a local file.
 
-See [the Code documentation]({% link docs/htb_walkthroughs/code/index.md %}#mermaid-diagram-code-blocks) for more configuration options and information.
+See [the Code documentation]({% link docs/htb_walkthroughs/easy/index.md %}#mermaid-diagram-code-blocks) for more configuration options and information.
 
 ## Aux links
 
