@@ -1,9 +1,20 @@
 ---
-title: UI Components
-nav_order: 3
+title: Hack The Box
+nav_order: 2
+has_children: true
 ---
 
-# UI Components
+# Walkthroughs de Hack The Box
+{: .fs-9 }
 
-To make it as easy as possible to write documentation in plain Markdown, most UI components are styled using default Markdown elements with few additional CSS classes needed.
+Esta sección contiene mis walkthroughs de máquinas de Hack The Box, organizadas por nivel de dificultad.  
+Todas están resueltas paso a paso, con comandos, notas y técnicas aplicadas.
 {: .fs-6 .fw-300 }
+
+---
+
+## 🧭 Dificultad
+
+- [Easy](easy/index.md)
+- [Medium](medium/index.md)
+- [Hard](hard/index.md)

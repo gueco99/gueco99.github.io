@@ -44,7 +44,6 @@ Resolución de máquinas de HTB organizadas por dificultad:
 
 - [LinkedIn](https://www.linkedin.com/in/diego-pacheco-a51070178)
 - [GitHub](https://github.com/gueco99)
-- Correo: *(puedes añadirlo si quieres)*
 
 ---
 
