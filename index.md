@@ -7,6 +7,11 @@ title: Inicio
 
 ¡Hola! Soy Diego Pacheco (gueco99) y aquí publico mis walkthroughs de Hack The Box.
 
-## Máquinas
+### Máquinas Easy
 
 - [Nibbles](nibbles.md)
+- [Lame](lame.md)
+
+## Máquinas Medium
+
+- [Forest](forest.md)
