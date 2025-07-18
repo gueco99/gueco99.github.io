@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Diego Pacheco
+title: gueco99
 nav_order: 1
 ---
 
-# 👋 Hola, soy Diego Pacheco
+# 👋 Hola, soy gueco99
 
 Soy estudiante de ciberseguridad y técnico en administración de sistemas informáticos.  
 Me apasiona la tecnología, el aprendizaje continuo y los desafíos que nos permiten crecer profesionalmente.
@@ -25,7 +25,7 @@ Me apasiona la tecnología, el aprendizaje continuo y los desafíos que nos perm
 - [Walkthroughs de Hack The Box](walkthroughs/easy/)
 - [Mis proyectos en GitHub](https://github.com/gueco99)
 - [Certificaciones y logros](certificaciones.md) <!-- si lo creas -->
-- [Contacto profesional (LinkedIn)](https://www.linkedin.com/in/diego-pacheco-a51070178)
+- [Repositorio en GitHub](https://github.com/gueco99)
 
 ---
 
