@@ -14,7 +14,7 @@ nav_order: 1
 
 ## Introducción
 
-**Broker** es una máquina de nivel *Medium* en Hack The Box. El enfoque principal está en identificar puertos expuestos mediante escaneo completo y explotar los servicios visibles.
+**Broker** es una máquina de nivel *Easy* en Hack The Box. El enfoque principal está en identificar puertos expuestos mediante escaneo completo y explotar los servicios visibles.
 
 - SO: Linux  
 - Dificultad: Media  
@@ -35,4 +35,5 @@ nmap -sC -sV -p- -T4 10.10.11.243
 > `-p-`: Escanea los 65535 puertos, no solo los comunes.  
 > `-T4`: Acelera un poco el escaneo sin perder mucha estabilidad.
 
-![Resultado de Nmap](../../assets/images/broker/01-nmap.png)
+![Resultado de Nmap](/assets/images/broker/01-nmap.png)
+
