@@ -1,7 +1,24 @@
-# HTB Walkthrough – Broker
+---
+title: Broker
+parent: Easy
+nav_order: 1
+---
 
-**Fecha de resolución:** 17 de julio de 2025  
-**Autor:** [gueco99](https://github.com/gueco99)
+# Walkthrough — Broker (Hack The Box)
+{: .fs-9 }
+
+> Walkthrough para la máquina *Broker* de HTB, enfocada en enumeración de puertos y explotación básica.
+{: .fs-6 .fw-300 }
+
+---
+
+## Introducción
+
+**Broker** es una máquina de nivel *Medium* en Hack The Box. El enfoque principal está en identificar puertos expuestos mediante escaneo completo y explotar los servicios visibles.
+
+- SO: Linux  
+- Dificultad: Media  
+- Herramientas utilizadas: `nmap`
 
 ---
 
