@@ -7,7 +7,7 @@ nav_order: 1
 # Walkthrough — Knife (Hack The Box)
 {: .fs-9 }
 
-> Una aventura divertida y directa en la máquina *Knife* de HTB. Aquí te muestro cómo logré acceso como root aprovechando una backdoor en PHP y un binario mal configurado. 🎯
+> Una experiencia técnica entretenida y desafiante en la máquina Knife de HTB. En este walkthrough te muestro cómo logré acceso como root, aprovechando una backdoor en PHP y una curiosa configuración de privilegios. 🎯
 {: .fs-6 .fw-300 }
 
 ---
