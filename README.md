@@ -1,10 +1,5 @@
----
-layout: default
-title: gueco99
-nav_order: 1
----
 
-# 👋 Hola, soy gueco99
+# 👋 Hola, soy Diego Pacheco (gueco99)
 
 Soy estudiante de ciberseguridad y técnico en administración de sistemas informáticos.  
 Me apasiona la tecnología, el aprendizaje continuo y los desafíos que nos permiten crecer profesionalmente.
