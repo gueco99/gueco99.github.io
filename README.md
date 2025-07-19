@@ -17,10 +17,8 @@ Me apasiona la tecnología, el aprendizaje continuo y los desafíos que nos perm
 
 ## 📂 Proyectos y contenido
 
-- [Walkthroughs de Hack The Box](walkthroughs/easy/)
+- [Walkthroughs de Hack The Box](https://gueco99.github.io/)
 - [Mis proyectos en GitHub](https://github.com/gueco99)
-- [Certificaciones y logros](certificaciones.md) <!-- si lo creas -->
-- [Repositorio en GitHub](https://github.com/gueco99)
 
 ---
 
