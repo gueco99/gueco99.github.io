@@ -141,10 +141,7 @@ Accedemos al dashboard administrativo tras autenticarnos como `admin`.
 
 Detectamos una vulnerabilidad SSTI (Server Side Template Injection) al modificar el nombre en el perfil.
 
-```jinja
-{{ namespace.__init__.__globals__.os.popen('id').read() }}
-```
-
+\{\{ namespace.__init__.__globals__.os.popen('id').read() \}\}
 ![Ejecución de comandos con SSTI](/assets/images/goodgames/11-ssti-root-check.png)
 
 ---
@@ -153,7 +150,7 @@ Detectamos una vulnerabilidad SSTI (Server Side Template Injection) al modificar
 
 Enviamos una reverse shell a nuestra máquina desde la vulnerabilidad SSTI:
 
-
+\{\{ namespace.__init__.__globals__.os.popen('id').read() \}\}
 
 ![Código de reverse shell SSTI](/assets/images/goodgames/12-ssti-reverse-shell.png)
 
