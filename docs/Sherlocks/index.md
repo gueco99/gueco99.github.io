@@ -13,7 +13,7 @@ En esta sección encontrarás walkthroughs dedicados a los **Sherlock** de Hack 
 
 ## Retos resueltos
 
-- [BFT](BFT_Sherlock_Walkthrough.md)
+- [BFT](BFT.md)
 - *(Próximamente más)*
 
 ---
