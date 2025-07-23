@@ -7,7 +7,7 @@ nav_order: 1
 # Walkthrough — BFT (Very Easy)
 {: .fs-9 }
 
-> A forensic walkthrough focused on NTFS Master File Table (MFT) analysis using industry-standard tools.
+> Una guía forense especializada en el análisis de la Master File Table (MFT) de sistemas NTFS, utilizando herramientas reconocidas en el ámbito profesional del análisis forense digital.
 {: .fs-6 .fw-300 }
 
 ---
@@ -16,11 +16,12 @@ nav_order: 1
 
 In this Sherlock, you will become acquainted with MFT (Master File Table) forensics. You will be introduced to well-known tools and methodologies for analyzing MFT artifacts to identify malicious activity. During our analysis, you will utilize the MFTECmd tool to parse the provided MFT file, TimeLine Explorer to open and analyze the results from the parsed MFT, and a Hex editor to recover file contents from the MFT.
 
-### 🔧 Tools Used
+### 🔧 Herramientas utilizadas
 
-- **MFTECmd** – for parsing the MFT file.
-- **Timeline Explorer** – for timeline-based analysis.
-- **HxD Hex Editor** – for raw inspection of MFT entries.
+- **MFTECmd** – para analizar el archivo MFT.
+- **Timeline Explorer** – para análisis basado en línea de tiempo.
+- **HxD Hex Editor** – para inspección cruda de entradas MFT.
+
 
 ---
 
@@ -35,6 +36,8 @@ Aplicamos dos filtros importantes:
 Esto nos arroja tres resultados, pero uno de ellos es un archivo legítimo de recolección forense (`KAPE.zip`). El archivo relevante que fue descargado desde un enlace es:
 
 ✅ **Respuesta: `Stage-20240213T093324Z-001.zip`**
+
+![ZIP listado](/assets/images/bft/01-zip-listado.png)
 
 ---
 
@@ -51,6 +54,8 @@ https://storage.googleapis.com/drive-bulk-export-anonymous/20240213T093324.039Z/
 ✅ **Respuesta:**
 `https://storage.googleapis.com/drive-bulk-export-anonymous/20240213T093324.039Z/4133399871716478688/...`
 
+![Zone Identifier](/assets/images/bft/02-zoneidentifier.png)
+
 ---
 
 ## Task 3: What is the full path and name of the malicious file that executed malicious code and connected to a C2 server?
@@ -61,6 +66,8 @@ Descubrimos el archivo:
 
 ✅ **Respuesta:**
 `C:\Users\simon.stark\Downloads\Stage-20240213T093324Z-001\Stage\invoice\invoices\invoice.bat`
+
+![Ruta del .bat](/assets/images/bft/03-malicious-path.png)
 
 ---
 
@@ -74,6 +81,8 @@ Buscando la entrada de `invoice.bat` vemos:
 `2024-02-13 16:38:39`
 
 Este tiempo se puede incluir en una línea de tiempo forense más amplia.
+
+![Timestamp del .bat](/assets/images/bft/04-created0x30.png)
 
 ---
 
@@ -92,6 +101,8 @@ Para encontrar el offset hexadecimal de un archivo en el MFT:
    ```
 
 ✅ **Respuesta: `0x16E3000`**
+
+![Hex offset](/assets/images/bft/05-hex-offset.png)
 
 ---
 
@@ -112,6 +123,9 @@ http://43.204.110.203:6666/download
 ```
 
 ✅ **Respuesta: `43.204.110.203:6666`**
+
+![Contenido en HxD](/assets/images/bft/06-c2-hex.png)
+![Contenido en HxD](/assets/images/bft/07-c2-hex.png)
 
 ---
 
