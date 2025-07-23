@@ -1,7 +1,7 @@
 ---
 title: GoodGames
 parent: Easy
-nav_order: 1
+nav_order: 2
 ---
 
 # Walkthrough — GoodGames (Hack The Box)
@@ -220,7 +220,7 @@ chmod 4777 bash
 ```
 
 ![Configurando bash con SUID](/assets/images/goodgames/18-bash-suid.png)
-![Configurando bash con SUID](/assets/images/goodgames/18b-bash-suid.png)
+![Configurando bash](/assets/images/goodgames/18b-bash-suid.png)
 
 ---
 
