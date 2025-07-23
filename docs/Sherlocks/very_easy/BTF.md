@@ -1,6 +1,6 @@
 ---
 title: BFT
-parent: very_easy
+parent: Very Easy
 nav_order: 1
 ---
 
