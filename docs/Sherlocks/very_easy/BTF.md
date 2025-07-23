@@ -1,6 +1,6 @@
 ---
-title: BFT Sherlock Investigation
-parent: Sherlock
+title: BFT
+parent: very_easy
 nav_order: 1
 ---
 
