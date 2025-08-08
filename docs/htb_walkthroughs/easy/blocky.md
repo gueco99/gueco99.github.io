@@ -1,3 +1,10 @@
+---
+title: Blocky
+parent: Easy
+nav_order: 2
+---
+
+
 # HTB - Blocky Walkthrough
 
 ## Introducción
@@ -120,3 +127,7 @@ Esta máquina se resolvió aprovechando:
 - Configuración insegura de `sudo`.
 
 Fue un reto entretenido y directo, ideal para practicar enumeración web y análisis de ficheros Java.
+
+
+**Autor:** [gueco99](https://github.com/gueco99)  
+🧠 Hack the Box – *Blocky* (Easy)
