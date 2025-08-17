@@ -1,5 +1,5 @@
 ---
-title: chemistry
+title: Chemistry
 parent: Easy
 nav_order: 1
 ---
@@ -236,7 +236,7 @@ Con la clave descargada y los permisos correctos (`chmod 600`), me conecté como
 ssh -i root.key root@10.10.11.38
 ```
 
-![Root Shell](/assets/images/chemistry/root/22-root-shell.png)
+![Root Shell](/assets/images/chemistry/22-root-shell.png)
 
 Una vez dentro, confirmé la escalada y leí la flag de **root.txt** :
 
