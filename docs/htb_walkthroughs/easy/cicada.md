@@ -12,6 +12,8 @@ nav_order: 1
 
 ---
 
+![0](/assets/images/cicada/0.png)
+
 ## Escaneo inicial
 
 He lanzado un escaneo completo de puertos TCP con Nmap sobre la IP 10.129.38.45 para identificar qué servicios están activos y accesibles en la máquina objetivo.
