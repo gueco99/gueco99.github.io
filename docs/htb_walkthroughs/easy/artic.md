@@ -130,3 +130,6 @@ Pero al final ya tenemos acceso root.
 ---
 
 ![15](/assets/images/arctic/15.png)
+
+**Autor:** [gueco99](https://github.com/gueco99)  
+Hack the Box – *Arctic* (Easy)
