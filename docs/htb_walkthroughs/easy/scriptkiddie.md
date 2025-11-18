@@ -7,7 +7,7 @@ nav_order: 2
 # Walkthrough — ScriptKiddie (Hack The Box)
 {: .fs-9 }
 
-> En esta máquina se aprovechan varias fallas: una inyección en la plantilla de generación de APK de Metasploit (CVE-2020-7384) para obtener acceso inicial, un fallo de validación en un script de automatización (`scanlosers.sh`) que permite inyección de comandos para movimiento lateral, y finalmente abuso de permisos `sudo` sobre `msfconsole` para escalar a root.
+> En esta máquina se aprovechan varias vulnerabilidades: una inyección en la plantilla de generación de APK de Metasploit (CVE-2020-7384) para obtener acceso inicial, un fallo de validación en un script de automatización (`scanlosers.sh`) que permite inyección de comandos para movimiento lateral, y finalmente abuso de permisos `sudo` sobre `msfconsole` para escalar a root.
 {: .fs-6 .fw-300 }
 
 ---
@@ -24,7 +24,7 @@ Primero ejecuté un escaneo rápido para ver puertos abiertos y servicios básic
 nmap 10.129.95.150
 ```
 
-Salida importante (resumida):
+Salida importante, con esto ya podemos tener una idea para hacer un escaneo mas exhaustivo:
 
 ```
 PORT     STATE SERVICE
@@ -74,7 +74,7 @@ Qué nos dice esto:
 
 ![6](/assets/images/scriptkiddie/6.png)
 
-Esta captura muestra la interfaz pública de la aplicación (página principal). Observamos que incluye funcionalidades para generar APKs y/o invocar msfvenom desde el servidor — un patrón peligroso si el input no se valida correctamente.
+Esta captura muestra la interfaz pública de la aplicación (página principal). Observamos que incluye funcionalidades para generar APKs e invocar msfvenom desde el servidor — un patrón peligroso si el input no se valida correctamente.
 
 ---
 
@@ -173,7 +173,7 @@ sudo -l
 
 y se observa que el usuario `pwn`  puede ejecutar `msfconsole` como root sin contraseña.
 
-### Por qué esto importa
+### Importante
 
 `msfconsole` es un binario que integra un entorno Ruby interactivo. Ejecutarlo como root puede permitir ejecutar código arbitrario con privilegios elevados. En este escenario, accedí a `msfconsole` con `sudo`, abrí una consola `irb` (Ruby REPL) y desde ella usé `system()` para ejecutar comandos del sistema como root, obteniendo así una shell privilegiada.
 
@@ -195,7 +195,7 @@ Con esto, ya tenemos `root` y acceso al `root.txt`.
 
 ---
 
-**Autor del writeup original:** [gueco99](https://github.com/gueco99)  
+**Autor:** [gueco99](https://github.com/gueco99)  
 **Máquina:** ScriptKiddie — *Easy* (Hack The Box)
 
 ---
